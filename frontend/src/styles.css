@@ -1,0 +1,144 @@
+/* ---------- Global ---------- */
+:root {
+  --bg: #0A0A0F;
+  --card: rgba(20, 20, 40, 0.85);
+  --accent1: #00f0ff;
+  --accent2: #9d00ff;
+  --accent3: #0ff0aa;
+  --muted: #888;
+  --neon-glow: 0 0 8px var(--accent1), 0 0 16px var(--accent2), 0 0 24px var(--accent3);
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  font-family: 'Inter', 'Space Grotesk', sans-serif;
+  background: linear-gradient(120deg, #0A0A0F, #1A1A2E);
+  color: #fff;
+}
+
+/* ---------- Header ---------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px;
+  background: rgba(20,20,40,0.6);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  font-weight: 700;
+  color: #00f0ff;
+  text-shadow: var(--neon-glow);
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 24px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+header nav a:hover {
+  text-shadow: var(--neon-glow);
+  color: var(--accent1);
+}
+
+/* ---------- Layout ---------- */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 32px;
+  max-width: 1400px;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 1024px) {
+  .container { grid-template-columns: 1fr; }
+}
+
+/* ---------- Cards & Panels ---------- */
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+  display: flex;          /* horizontal layout */
+  justify-content: center; /* center cards in page */
+  gap: 24px;              /* space between cards */
+  margin: 60px 0;         /* space from top and bottom of page */
+  flex-wrap: wrap; 
+
+}
+
+
+.card:hover { box-shadow: var(--neon-glow); }
+
+/* ---------- Inputs ---------- */
+textarea, input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #444;
+  background: rgba(10,10,20,0.7);
+  color: #fff;
+  font-size: 14px;
+}
+
+textarea::placeholder { color: var(--muted); }
+
+/* ---------- Buttons ---------- */
+button {
+  border: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(45deg, var(--accent1), var(--accent2));
+  box-shadow: var(--neon-glow);
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px var(--accent1), 0 0 24px var(--accent2), 0 0 36px var(--accent3);
+}
+
+/* ---------- Iframe Preview ---------- */
+.iframe-wrapper {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid #222;
+  min-height: 600px;
+  box-shadow: var(--neon-glow);
+}
+
+/* ---------- Tabs ---------- */
+.tabs { display: flex; gap: 12px; margin-bottom: 16px; }
+.tabs button {
+  background: rgba(10,10,20,0.5);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 12px;
+}
+.tabs button.active {
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  box-shadow: var(--neon-glow);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-size: 13px;
+  margin-top: 32px;
+}
