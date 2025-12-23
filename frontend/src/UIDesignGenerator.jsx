@@ -77,7 +77,7 @@ export default function UIDesignGenerator() {
   async function generateFromPrompt(source = 'prompt') {
     setIsGenerating(true);
     try {
-      const response = await fetch("http://localhost:5000/api/generate", {
+      const response = await fetch(" https://ai-ui-generator.onrender.com", {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ prompt, sketchDataUrl, source })
